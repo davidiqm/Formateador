@@ -1,6 +1,6 @@
 ﻿namespace Formateador
 {
-    partial class Form1
+    partial class Principal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -18,6 +18,7 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
+            ObjWord.Quit();
         }
 
         #region Código generado por el Diseñador de Windows Forms
@@ -35,6 +36,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.actividadempresa = new System.Windows.Forms.TextBox();
+            this.domicilio = new System.Windows.Forms.TextBox();
+            this.telefono = new System.Windows.Forms.TextBox();
+            this.representante = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // razonsocial
@@ -73,7 +78,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(302, 368);
+            this.button1.Location = new System.Drawing.Point(262, 224);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -99,11 +104,43 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "REPRESENTANTE LEGAL";
             // 
-            // Form1
+            // actividadempresa
+            // 
+            this.actividadempresa.Location = new System.Drawing.Point(275, 74);
+            this.actividadempresa.Name = "actividadempresa";
+            this.actividadempresa.Size = new System.Drawing.Size(261, 20);
+            this.actividadempresa.TabIndex = 7;
+            // 
+            // domicilio
+            // 
+            this.domicilio.Location = new System.Drawing.Point(275, 108);
+            this.domicilio.Name = "domicilio";
+            this.domicilio.Size = new System.Drawing.Size(261, 20);
+            this.domicilio.TabIndex = 8;
+            // 
+            // telefono
+            // 
+            this.telefono.Location = new System.Drawing.Point(275, 136);
+            this.telefono.Name = "telefono";
+            this.telefono.Size = new System.Drawing.Size(261, 20);
+            this.telefono.TabIndex = 9;
+            // 
+            // representante
+            // 
+            this.representante.Location = new System.Drawing.Point(275, 166);
+            this.representante.Name = "representante";
+            this.representante.Size = new System.Drawing.Size(261, 20);
+            this.representante.TabIndex = 10;
+            // 
+            // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 450);
+            this.ClientSize = new System.Drawing.Size(609, 278);
+            this.Controls.Add(this.representante);
+            this.Controls.Add(this.telefono);
+            this.Controls.Add(this.domicilio);
+            this.Controls.Add(this.actividadempresa);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
@@ -111,8 +148,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.razonsocial);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Principal";
+            this.Text = "Protección Civil";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,6 +164,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox actividadempresa;
+        private System.Windows.Forms.TextBox domicilio;
+        private System.Windows.Forms.TextBox telefono;
+        private System.Windows.Forms.TextBox representante;
     }
 }
 

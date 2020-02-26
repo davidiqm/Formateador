@@ -110,6 +110,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="images\" />
     <Folder Include="word\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
