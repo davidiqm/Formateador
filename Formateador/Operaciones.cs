@@ -10,9 +10,18 @@ namespace Formateador
     class Operaciones
     {
 
-        //Reemplaza la razon social en el texto
+        public static void RazonComercial(Word.Application ObjWord, Word.Document ObjDoc, string texto)
+        {
+            for(int i = 0; i<2; i++)
+            {
+                ObjDoc.Bookmarks["razoncomercial" + i].Select();
+                ObjWord.Selection.TypeText(texto);
+            }
+        }
+
         public static void RazonSocial(Word.Application ObjWord, Word.Document ObjDoc, string texto)
         {
+            //Reemplaza todos los marcadores con un ciclo for
             for(int i = 0; i<13; i++)
             {
                 ObjDoc.Bookmarks["razonsocial" + i].Select();

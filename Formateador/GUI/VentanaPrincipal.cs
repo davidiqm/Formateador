@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 
@@ -13,21 +6,29 @@ namespace Formateador
 {
     public partial class Principal : Form
     {
+        //Atributos Word para modificar los valores
         Word.Application ObjWord;
         Word.Document ObjDoc;
+        //ObjectMiss para enviar valores cualquiera
         object ObjMiss = System.Reflection.Missing.Value;
 
         public Principal()
         {
-            string ruta = Application.StartupPath + @"\PIPC CAMPECHE.docx";
             ObjWord = new Word.Application();
-            ObjDoc = ObjWord.Documents.Open(ruta, ObjMiss);
+            string archivo = Application.StartupPath + @"\PIPC CAMPECHE.docx";
+            ObjDoc = ObjWord.Documents.Open(archivo, ObjMiss);
             InitializeComponent();
         }
 
+        //Verfica que los campos estén completos
         private bool Verifica()
         {
-            if (string.IsNullOrEmpty(razonsocial.Text))
+            if (string.IsNullOrEmpty(razoncomercial.Text))
+            {
+                MessageBox.Show("Ingrese valor en RAZÓN COMERCIAL");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(razonsocial.Text))
             {
                 MessageBox.Show("Ingrese un valor en RAZON SOCIAL ");
                 return false;
@@ -54,6 +55,7 @@ namespace Formateador
             }
             else
             {
+                Operaciones.RazonComercial(ObjWord, ObjDoc, razoncomercial.Text);
                 Operaciones.RazonSocial(ObjWord, ObjDoc, razonsocial.Text);
                 Operaciones.ActividadEmpresa(ObjWord, ObjDoc, actividadempresa.Text);
                 Operaciones.Domicilio(ObjWord, ObjDoc, domicilio.Text);
@@ -68,7 +70,7 @@ namespace Formateador
         {
             if (Verifica())
             {
-                ObjWord.Visible = true;
+                ObjWord.Visible = true; 
             }
         }
     }
