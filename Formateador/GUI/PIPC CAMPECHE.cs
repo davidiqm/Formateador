@@ -4,7 +4,7 @@ using Word = Microsoft.Office.Interop.Word;
 
 namespace Formateador
 {
-    public partial class Principal : Form
+    public partial class PipcCampeche : Form
     {
         //Atributos Word para modificar los valores
         Word.Application ObjWord;
@@ -12,17 +12,15 @@ namespace Formateador
         //ObjectMiss para enviar valores cualquiera
         object ObjMiss = System.Reflection.Missing.Value;
 
-        public Principal()
+        public PipcCampeche()
         {
-            ObjWord = new Word.Application();
-            string archivo = Application.StartupPath + @"\PIPC CAMPECHE.docx";
-            ObjDoc = ObjWord.Documents.Open(archivo, ObjMiss);
             InitializeComponent();
         }
 
         //Verfica que los campos estén completos
         private bool Verifica()
         {
+
             if (string.IsNullOrEmpty(razoncomercial.Text))
             {
                 MessageBox.Show("Ingrese valor en RAZÓN COMERCIAL");
@@ -55,12 +53,6 @@ namespace Formateador
             }
             else
             {
-                Operaciones.RazonComercial(ObjWord, ObjDoc, razoncomercial.Text);
-                Operaciones.RazonSocial(ObjWord, ObjDoc, razonsocial.Text);
-                Operaciones.ActividadEmpresa(ObjWord, ObjDoc, actividadempresa.Text);
-                Operaciones.Domicilio(ObjWord, ObjDoc, domicilio.Text);
-                Operaciones.Telefono(ObjWord, ObjDoc, telefono.Text);
-                Operaciones.Representante(ObjWord, ObjDoc, representante.Text);
                 return true;
             }
         }
@@ -70,6 +62,16 @@ namespace Formateador
         {
             if (Verifica())
             {
+                ObjWord = new Word.Application();
+                string archivo = Application.StartupPath + @"\PIPC CAMPECHE.docx";
+                ObjDoc = ObjWord.Documents.Open(archivo, ObjMiss);
+
+                Operaciones.RazonComercial(ObjWord, ObjDoc, razoncomercial.Text);
+                Operaciones.RazonSocial(ObjWord, ObjDoc, razonsocial.Text);
+                Operaciones.ActividadEmpresa(ObjWord, ObjDoc, actividadempresa.Text);
+                Operaciones.Domicilio(ObjWord, ObjDoc, domicilio.Text);
+                Operaciones.Telefono(ObjWord, ObjDoc, telefono.Text);
+                Operaciones.Representante(ObjWord, ObjDoc, representante.Text);
                 ObjWord.Visible = true; 
             }
         }

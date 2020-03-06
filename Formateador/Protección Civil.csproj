@@ -32,6 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -49,17 +53,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Operaciones.cs" />
-    <Compile Include="GUI\VentanaPrincipal.cs">
+    <Compile Include="GUI\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\VentanaPrincipal.Designer.cs">
-      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
+    <Compile Include="GUI\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones.cs" />
+    <Compile Include="GUI\PIPC CAMPECHE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PIPC CAMPECHE.Designer.cs">
+      <DependentUpon>PIPC CAMPECHE.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\VentanaPrincipal.resx">
-      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\PIPC CAMPECHE.resx">
+      <DependentUpon>PIPC CAMPECHE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
