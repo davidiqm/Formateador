@@ -18,7 +18,7 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
-            ObjWord.Quit();
+            //ObjWord.Quit();
         }
 
         #region Código generado por el Diseñador de Windows Forms
@@ -29,11 +29,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PipcCampeche));
             this.razonsocial = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnguardar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.actividadempresa = new System.Windows.Forms.TextBox();
@@ -43,6 +44,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.razoncomercial = new System.Windows.Forms.TextBox();
             this.municipio = new System.Windows.Forms.ComboBox();
+            this.btnregresar = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // razonsocial
@@ -79,15 +82,15 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "DOMICILIO";
             // 
-            // button1
+            // btnguardar
             // 
-            this.button1.Location = new System.Drawing.Point(264, 299);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "ACEPTAR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnguardar.Location = new System.Drawing.Point(470, 297);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(75, 23);
+            this.btnguardar.TabIndex = 10;
+            this.btnguardar.Text = "ACEPTAR";
+            this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // label4
             // 
@@ -173,11 +176,22 @@
             this.municipio.Size = new System.Drawing.Size(121, 21);
             this.municipio.TabIndex = 12;
             // 
+            // btnregresar
+            // 
+            this.btnregresar.Location = new System.Drawing.Point(68, 297);
+            this.btnregresar.Name = "btnregresar";
+            this.btnregresar.Size = new System.Drawing.Size(75, 23);
+            this.btnregresar.TabIndex = 13;
+            this.btnregresar.Text = "REGRESAR";
+            this.btnregresar.UseVisualStyleBackColor = true;
+            this.btnregresar.Click += new System.EventHandler(this.btnregresar_Click);
+            // 
             // PipcCampeche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 348);
+            this.Controls.Add(this.btnregresar);
             this.Controls.Add(this.municipio);
             this.Controls.Add(this.razoncomercial);
             this.Controls.Add(this.label6);
@@ -187,11 +201,12 @@
             this.Controls.Add(this.actividadempresa);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.razonsocial);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PipcCampeche";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PIPC CAMPECHE";
@@ -206,7 +221,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox actividadempresa;
@@ -216,6 +231,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox razoncomercial;
         private System.Windows.Forms.ComboBox municipio;
+        private System.Windows.Forms.Button btnregresar;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

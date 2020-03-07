@@ -57,23 +57,56 @@ namespace Formateador
             }
         }
 
-        //Inicia el proceso de formateado
-        private void button1_Click(object sender, EventArgs e)
+        //Copia el archivo base en una ruta nueva escogido por el usuario
+        private void btnguardar_Click(object sender, EventArgs e)
         {
+            //Si verifica es true, el cual checa las casillas, se ejecuta el copiado
             if (Verifica())
             {
-                ObjWord = new Word.Application();
-                string archivo = Application.StartupPath + @"\PIPC CAMPECHE.docx";
-                ObjDoc = ObjWord.Documents.Open(archivo, ObjMiss);
+                //Instancia de SaveFileDialog
+                SaveFileDialog sfd = new SaveFileDialog();
 
-                Operaciones.RazonComercial(ObjWord, ObjDoc, razoncomercial.Text);
-                Operaciones.RazonSocial(ObjWord, ObjDoc, razonsocial.Text);
-                Operaciones.ActividadEmpresa(ObjWord, ObjDoc, actividadempresa.Text);
-                Operaciones.Domicilio(ObjWord, ObjDoc, domicilio.Text);
-                Operaciones.Telefono(ObjWord, ObjDoc, telefono.Text);
-                Operaciones.Representante(ObjWord, ObjDoc, representante.Text);
-                ObjWord.Visible = true; 
+                //Advertencia de sobreescritura
+                sfd.OverwritePrompt = true;
+
+                //Nombre del archivo por defecto
+                sfd.FileName = "PIPC " + razonsocial.Text;
+                //Filtros de archivo
+                sfd.Filter = "Archivos Word (*.docx)|*.docx|Todos los archivos (*.*)|*.*";
+                sfd.Title = "Guardar";
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    sfd.Dispose();
+                    Word(sfd.FileName);
+                }
             }
+        }
+
+        //Regresa a la ventana principal
+        private void btnregresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Inicio principal = new Inicio();
+            principal.Show();
+        }
+
+        //Realiza el proceso de sustitución de valores
+        private void Word(string rutafinal)
+        {
+            string archivo = Application.StartupPath + @"\PIPC CAMPECHE.docx";
+
+            System.IO.File.Copy(archivo, rutafinal);
+
+            //ObjWord = new Word.Application();
+            //ObjDoc = ObjWord.Documents.Open(rutafinal, ObjMiss);
+
+            //Operaciones.RazonComercial(ObjWord, ObjDoc, razoncomercial.Text);
+            //Operaciones.RazonSocial(ObjWord, ObjDoc, razonsocial.Text);
+            //Operaciones.ActividadEmpresa(ObjWord, ObjDoc, actividadempresa.Text);
+            //Operaciones.Domicilio(ObjWord, ObjDoc, domicilio.Text);
+            //Operaciones.Telefono(ObjWord, ObjDoc, telefono.Text);
+            //Operaciones.Representante(ObjWord, ObjDoc, representante.Text);
+            //ObjWord.Visible = true;
         }
     }
 }
