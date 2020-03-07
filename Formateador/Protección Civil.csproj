@@ -38,8 +38,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp">
@@ -53,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\Confirmar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Confirmar.Designer.cs">
+      <DependentUpon>Confirmar.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +76,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recursos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recursos.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GUI\Confirmar.resx">
+      <DependentUpon>Confirmar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\PIPC CAMPECHE.resx">
       <DependentUpon>PIPC CAMPECHE.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +99,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Recursos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Recursos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -92,6 +112,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="word\PIPC CAMPECHE.docx" />
+    <None Include="word\PLANES.docx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -127,7 +149,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\" />
-    <Folder Include="word\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

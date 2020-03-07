@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 
@@ -15,9 +16,33 @@ namespace Formateador
         public PipcCampeche()
         {
             InitializeComponent();
+            timer1.Start();
         }
 
-        //Verfica que los campos estén completos
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int CS_DROPSHADOW = 0x20000;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwd, int wmsg, int wparam, int lparam);
+
+        //Verfica que los campos estén completos para retroceder a la pantalla principal
+        private bool Verifica2()
+        {
+            return !string.IsNullOrEmpty(razoncomercial.Text) || !string.IsNullOrEmpty(razonsocial.Text) || !string.IsNullOrEmpty(actividadempresa.Text) || !string.IsNullOrEmpty(domicilio.Text) || !string.IsNullOrEmpty(telefono.Text) || !string.IsNullOrEmpty(representante.Text);
+        }
+
+        //Verifica que los campos estén llenos para formatear el documento
         private bool Verifica()
         {
 
@@ -70,9 +95,9 @@ namespace Formateador
                 sfd.OverwritePrompt = true;
 
                 //Nombre del archivo por defecto
-                sfd.FileName = "PIPC " + razonsocial.Text;
+                sfd.FileName = "PIPC " + razoncomercial.Text;
                 //Filtros de archivo
-                sfd.Filter = "Archivos Word (*.docx)|*.docx|Todos los archivos (*.*)|*.*";
+                sfd.Filter = "Archivos Word (*.docx)|*.docx";
                 sfd.Title = "Guardar";
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
@@ -85,20 +110,36 @@ namespace Formateador
         //Regresa a la ventana principal
         private void btnregresar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Inicio principal = new Inicio();
-            principal.Show();
+            if (Verifica2() == false)
+            {
+                this.Hide();
+                Inicio principal = new Inicio();
+                principal.Show();
+            }
+            else
+            {
+                DialogResult resultado = new DialogResult();
+                Form confirm = new GUI.Confirmar("¿Desea regresar al menú de inicio?");
+                resultado = confirm.ShowDialog();
+                if(resultado == DialogResult.OK)
+                {
+                    this.Hide();
+                    Inicio inicio = new Inicio();
+                    inicio.Show();
+                }
+            }
+
         }
 
         //Realiza el proceso de sustitución de valores
         private void Word(string rutafinal)
         {
-            string archivo = Application.StartupPath + @"\PIPC CAMPECHE.docx";
+            string ruta = Application.StartupPath + @"\Nuevo.docx";
+            //byte[] word = Recursos.PIPC_CAMPECHE;
+            //System.IO.File.WriteAllBytes(rutafinal, word);
 
-            System.IO.File.Copy(archivo, rutafinal);
-
-            //ObjWord = new Word.Application();
-            //ObjDoc = ObjWord.Documents.Open(rutafinal, ObjMiss);
+            ObjWord = new Word.Application();
+            ObjDoc = ObjWord.Documents.Open(ruta, ObjMiss);
 
             //Operaciones.RazonComercial(ObjWord, ObjDoc, razoncomercial.Text);
             //Operaciones.RazonSocial(ObjWord, ObjDoc, razonsocial.Text);
@@ -106,7 +147,57 @@ namespace Formateador
             //Operaciones.Domicilio(ObjWord, ObjDoc, domicilio.Text);
             //Operaciones.Telefono(ObjWord, ObjDoc, telefono.Text);
             //Operaciones.Representante(ObjWord, ObjDoc, representante.Text);
-            //ObjWord.Visible = true;
+            Operaciones.Tabla(ObjWord, ObjDoc, representante.Text);
+            ObjWord.Visible = true;
+        }
+
+        //Ventana de aviso para cerrar el programa
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = new DialogResult();
+            Form confirm = new GUI.Confirmar("¿Desea salir del programa?");
+            resultado = confirm.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        //Botón minimizar
+        private void btnminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        //Para poder arrastrar la ventana de windows
+        private void PipcCampeche_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        //El timer para el efecto fade
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(this.Opacity < 100.0)
+            {
+                this.Opacity += 0.2;
+            }
+            else
+            {
+                timer1.Stop();
+            }
+        }
+
+        private void btnlogo_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog abririmg = new OpenFileDialog();
+            abririmg.Filter = "Subir Logo (*.jpg, *.jepg)|*.jpg;*.jepg|PNG (*.png)|*.png";
+
+            if (abririmg.ShowDialog() == DialogResult.OK)
+            {
+                picturelogo.ImageLocation = abririmg.FileName;
+            }
         }
     }
 }

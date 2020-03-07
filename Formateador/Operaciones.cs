@@ -22,7 +22,7 @@ namespace Formateador
         public static void RazonSocial(Word.Application ObjWord, Word.Document ObjDoc, string texto)
         {
             //Reemplaza todos los marcadores con un ciclo for
-            for(int i = 0; i<13; i++)
+            for(int i = 0; i<14; i++)
             {
                 ObjDoc.Bookmarks["razonsocial" + i].Select();
                 ObjWord.Selection.TypeText(texto);
@@ -64,6 +64,22 @@ namespace Formateador
                 ObjDoc.Bookmarks["representante" + i].Select();
                 ObjWord.Selection.TypeText(texto);
             }
+        }
+
+        public static void Tabla(Word.Application ObjWord, Word.Document ObjDoc, string texto)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                object marcador = "tabla" + i;
+                Word.Range rango = ObjDoc.Bookmarks.get_Item(ref marcador).Range;
+                ObjDoc.Tables.Add(rango, 3, 3);
+
+            }
+
+            ObjDoc.Tables[2].Borders.Enable = 1;
+            //Word.Cell cell = ObjDoc.Tables[1].Cell(1,1);
+            //cell.Range.Text = "Nombre";
+
         }
     }
 }

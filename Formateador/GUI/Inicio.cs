@@ -16,6 +16,18 @@ namespace Formateador
         public Inicio()
         {
             InitializeComponent();
+            timer1.Start();
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int CS_DROPSHADOW = 0x20000;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -52,6 +64,29 @@ namespace Formateador
         private void btnyucatan_Click(object sender, EventArgs e)
         {
             MessageBox.Show("No disponible por el momento");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity < 100.0)
+            {
+                this.Opacity += 0.2;
+            }
+            else
+            {
+                timer1.Stop();
+            }
+        }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = new DialogResult();
+            Form confirm = new GUI.Confirmar("¿Desea salir del programa?");
+            resultado = confirm.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
     }
 }
