@@ -75,6 +75,8 @@
             this.btncampeche.BackColor = System.Drawing.Color.DarkOrange;
             this.btncampeche.FlatAppearance.BorderSize = 0;
             this.btncampeche.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncampeche.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncampeche.ForeColor = System.Drawing.SystemColors.Control;
             this.btncampeche.Location = new System.Drawing.Point(0, 30);
             this.btncampeche.Name = "btncampeche";
             this.btncampeche.Size = new System.Drawing.Size(200, 40);
@@ -88,6 +90,8 @@
             this.btnyucatan.BackColor = System.Drawing.Color.DarkOrange;
             this.btnyucatan.FlatAppearance.BorderSize = 0;
             this.btnyucatan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnyucatan.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnyucatan.ForeColor = System.Drawing.SystemColors.Control;
             this.btnyucatan.Location = new System.Drawing.Point(0, 146);
             this.btnyucatan.Name = "btnyucatan";
             this.btnyucatan.Size = new System.Drawing.Size(200, 40);
@@ -101,6 +105,8 @@
             this.btnquintanaroo.BackColor = System.Drawing.Color.DarkOrange;
             this.btnquintanaroo.FlatAppearance.BorderSize = 0;
             this.btnquintanaroo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnquintanaroo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnquintanaroo.ForeColor = System.Drawing.SystemColors.Control;
             this.btnquintanaroo.Location = new System.Drawing.Point(0, 88);
             this.btnquintanaroo.Name = "btnquintanaroo";
             this.btnquintanaroo.Size = new System.Drawing.Size(200, 40);
@@ -142,6 +148,8 @@
             this.btnsalir.BackColor = System.Drawing.Color.DarkOrange;
             this.btnsalir.FlatAppearance.BorderSize = 0;
             this.btnsalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsalir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsalir.ForeColor = System.Drawing.SystemColors.Control;
             this.btnsalir.Location = new System.Drawing.Point(0, 279);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(200, 40);
@@ -154,6 +162,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Copperplate Gothic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(286, 237);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(354, 60);
