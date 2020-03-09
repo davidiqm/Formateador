@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 
 namespace Formateador
@@ -121,7 +116,7 @@ namespace Formateador
                 ObjWord.Selection.TypeText(texto);
             }
 
-            for (int i = 0; i < 11; i++)
+            for (int i = 0; i < 24; i++)
             {
                 ObjPlanes.Bookmarks["ciudad" + i].Select();
                 ObjWord.Selection.TypeText(texto);
@@ -146,7 +141,7 @@ namespace Formateador
                 ObjWord.Selection.TypeText(texto);
             }
 
-            for (int i = 0; i < 23; i++)
+            for (int i = 0; i < 35; i++)
             {
                 ObjPlanes.Bookmarks["razonsocial" + i].Select();
                 ObjWord.Selection.TypeText(texto);
@@ -171,7 +166,7 @@ namespace Formateador
                 ObjWord.Selection.TypeText(texto);
             }
 
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 26; i++)
             {
                 ObjPlanes.Bookmarks["domicilio" + i].Select();
                 ObjWord.Selection.TypeText(texto);

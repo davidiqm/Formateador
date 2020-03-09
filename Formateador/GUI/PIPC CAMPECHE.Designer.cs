@@ -38,16 +38,35 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtDiscapacitados = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtTrabajadores = new System.Windows.Forms.TextBox();
+            this.txtColioeste = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtColieste = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtColisur = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtColinorte = new System.Windows.Forms.TextBox();
+            this.Colinorte = new System.Windows.Forms.Label();
+            this.txtSuperficieConst = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtHabitual = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.txtArea = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.btnguardar = new System.Windows.Forms.Button();
             this.txtPuesto = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.btnRecursos = new System.Windows.Forms.Button();
             this.txtNombreRH = new System.Windows.Forms.TextBox();
             this.recursosHumanos = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCiudad = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,7 +75,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtUbicacion = new System.Windows.Forms.TextBox();
-            this.btnregresar = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.btnagrega = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -92,27 +110,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtHabitual = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txtSuperficieConst = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtColinorte = new System.Windows.Forms.TextBox();
-            this.Colinorte = new System.Windows.Forms.Label();
-            this.txtColisur = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txtColieste = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.txtColioeste = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txtTrabajadores = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
+            this.btnguardar = new System.Windows.Forms.Button();
+            this.btnregresar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txtDiscapacitados = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -248,6 +248,168 @@
             this.panel1.Size = new System.Drawing.Size(1214, 529);
             this.panel1.TabIndex = 33;
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(622, 330);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(247, 17);
+            this.label23.TabIndex = 95;
+            this.label23.Text = "Personas con Condiciones Especiales";
+            // 
+            // txtDiscapacitados
+            // 
+            this.txtDiscapacitados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtDiscapacitados.ForeColor = System.Drawing.Color.Black;
+            this.txtDiscapacitados.Location = new System.Drawing.Point(622, 350);
+            this.txtDiscapacitados.Name = "txtDiscapacitados";
+            this.txtDiscapacitados.Size = new System.Drawing.Size(260, 20);
+            this.txtDiscapacitados.TabIndex = 21;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(625, 387);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(128, 17);
+            this.label28.TabIndex = 71;
+            this.label28.Text = "Recursos Humanos";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(622, 4);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(139, 17);
+            this.label27.TabIndex = 93;
+            this.label27.Text = "No. de Trabajadores";
+            // 
+            // txtTrabajadores
+            // 
+            this.txtTrabajadores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtTrabajadores.ForeColor = System.Drawing.Color.Black;
+            this.txtTrabajadores.Location = new System.Drawing.Point(622, 24);
+            this.txtTrabajadores.Name = "txtTrabajadores";
+            this.txtTrabajadores.Size = new System.Drawing.Size(260, 20);
+            this.txtTrabajadores.TabIndex = 15;
+            // 
+            // txtColioeste
+            // 
+            this.txtColioeste.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtColioeste.ForeColor = System.Drawing.Color.Black;
+            this.txtColioeste.Location = new System.Drawing.Point(33, 350);
+            this.txtColioeste.Name = "txtColioeste";
+            this.txtColioeste.Size = new System.Drawing.Size(260, 20);
+            this.txtColioeste.TabIndex = 7;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(33, 332);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(145, 17);
+            this.label26.TabIndex = 91;
+            this.label26.Text = "Colindancia al Oeste";
+            // 
+            // txtColieste
+            // 
+            this.txtColieste.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtColieste.ForeColor = System.Drawing.Color.Black;
+            this.txtColieste.Location = new System.Drawing.Point(33, 297);
+            this.txtColieste.Name = "txtColieste";
+            this.txtColieste.Size = new System.Drawing.Size(260, 20);
+            this.txtColieste.TabIndex = 6;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(33, 277);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(133, 17);
+            this.label25.TabIndex = 89;
+            this.label25.Text = "Colindancia al Este";
+            // 
+            // txtColisur
+            // 
+            this.txtColisur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtColisur.ForeColor = System.Drawing.Color.Black;
+            this.txtColisur.Location = new System.Drawing.Point(33, 242);
+            this.txtColisur.Name = "txtColisur";
+            this.txtColisur.Size = new System.Drawing.Size(260, 20);
+            this.txtColisur.TabIndex = 5;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(33, 222);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(126, 17);
+            this.label24.TabIndex = 87;
+            this.label24.Text = "Colindancia al Sur";
+            // 
+            // txtColinorte
+            // 
+            this.txtColinorte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtColinorte.ForeColor = System.Drawing.Color.Black;
+            this.txtColinorte.Location = new System.Drawing.Point(33, 190);
+            this.txtColinorte.Name = "txtColinorte";
+            this.txtColinorte.Size = new System.Drawing.Size(260, 20);
+            this.txtColinorte.TabIndex = 4;
+            // 
+            // Colinorte
+            // 
+            this.Colinorte.AutoSize = true;
+            this.Colinorte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Colinorte.Location = new System.Drawing.Point(33, 170);
+            this.Colinorte.Name = "Colinorte";
+            this.Colinorte.Size = new System.Drawing.Size(144, 17);
+            this.Colinorte.TabIndex = 85;
+            this.Colinorte.Text = "Colindancia al Norte";
+            // 
+            // txtSuperficieConst
+            // 
+            this.txtSuperficieConst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtSuperficieConst.ForeColor = System.Drawing.Color.Black;
+            this.txtSuperficieConst.Location = new System.Drawing.Point(622, 296);
+            this.txtSuperficieConst.Name = "txtSuperficieConst";
+            this.txtSuperficieConst.Size = new System.Drawing.Size(260, 20);
+            this.txtSuperficieConst.TabIndex = 20;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(622, 275);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(179, 17);
+            this.label22.TabIndex = 83;
+            this.label22.Text = "Superficie Total Construida";
+            // 
+            // txtHabitual
+            // 
+            this.txtHabitual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtHabitual.ForeColor = System.Drawing.Color.Black;
+            this.txtHabitual.Location = new System.Drawing.Point(622, 79);
+            this.txtHabitual.Name = "txtHabitual";
+            this.txtHabitual.Size = new System.Drawing.Size(260, 20);
+            this.txtHabitual.TabIndex = 16;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(622, 58);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(133, 17);
+            this.label21.TabIndex = 81;
+            this.label21.Text = "Población Habitual";
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Gainsboro;
@@ -268,7 +430,7 @@
             this.txtArea.Location = new System.Drawing.Point(805, 435);
             this.txtArea.Name = "txtArea";
             this.txtArea.Size = new System.Drawing.Size(156, 20);
-            this.txtArea.TabIndex = 78;
+            this.txtArea.TabIndex = 27;
             // 
             // label18
             // 
@@ -290,19 +452,6 @@
             this.label19.TabIndex = 76;
             this.label19.Text = "Área";
             // 
-            // btnguardar
-            // 
-            this.btnguardar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnguardar.FlatAppearance.BorderSize = 0;
-            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnguardar.Location = new System.Drawing.Point(1060, 17);
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(130, 40);
-            this.btnguardar.TabIndex = 14;
-            this.btnguardar.Text = "ACEPTAR";
-            this.btnguardar.UseVisualStyleBackColor = false;
-            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click_1);
-            // 
             // txtPuesto
             // 
             this.txtPuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -310,7 +459,7 @@
             this.txtPuesto.Location = new System.Drawing.Point(967, 435);
             this.txtPuesto.Name = "txtPuesto";
             this.txtPuesto.Size = new System.Drawing.Size(130, 20);
-            this.txtPuesto.TabIndex = 75;
+            this.txtPuesto.TabIndex = 28;
             // 
             // label20
             // 
@@ -327,7 +476,7 @@
             this.btnRecursos.Location = new System.Drawing.Point(1103, 433);
             this.btnRecursos.Name = "btnRecursos";
             this.btnRecursos.Size = new System.Drawing.Size(75, 23);
-            this.btnRecursos.TabIndex = 72;
+            this.btnRecursos.TabIndex = 29;
             this.btnRecursos.Text = "Agregar";
             this.btnRecursos.UseVisualStyleBackColor = true;
             this.btnRecursos.Click += new System.EventHandler(this.btnRecursos_Click);
@@ -339,7 +488,7 @@
             this.txtNombreRH.Location = new System.Drawing.Point(625, 434);
             this.txtNombreRH.Name = "txtNombreRH";
             this.txtNombreRH.Size = new System.Drawing.Size(174, 20);
-            this.txtNombreRH.TabIndex = 73;
+            this.txtNombreRH.TabIndex = 26;
             // 
             // recursosHumanos
             // 
@@ -356,6 +505,27 @@
             this.recursosHumanos.ReadOnly = true;
             this.recursosHumanos.Size = new System.Drawing.Size(550, 160);
             this.recursosHumanos.TabIndex = 71;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Área";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 157;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Puesto";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 150;
             // 
             // txtCiudad
             // 
@@ -413,7 +583,7 @@
             this.txtCargo.Location = new System.Drawing.Point(210, 57);
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(156, 20);
-            this.txtCargo.TabIndex = 69;
+            this.txtCargo.TabIndex = 23;
             // 
             // label16
             // 
@@ -442,20 +612,7 @@
             this.txtUbicacion.Location = new System.Drawing.Point(372, 57);
             this.txtUbicacion.Name = "txtUbicacion";
             this.txtUbicacion.Size = new System.Drawing.Size(130, 20);
-            this.txtUbicacion.TabIndex = 66;
-            // 
-            // btnregresar
-            // 
-            this.btnregresar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnregresar.FlatAppearance.BorderSize = 0;
-            this.btnregresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnregresar.Location = new System.Drawing.Point(42, 17);
-            this.btnregresar.Name = "btnregresar";
-            this.btnregresar.Size = new System.Drawing.Size(130, 40);
-            this.btnregresar.TabIndex = 0;
-            this.btnregresar.Text = "REGRESAR";
-            this.btnregresar.UseVisualStyleBackColor = false;
-            this.btnregresar.Click += new System.EventHandler(this.btnregresar_Click_1);
+            this.txtUbicacion.TabIndex = 24;
             // 
             // label14
             // 
@@ -472,7 +629,7 @@
             this.btnagrega.Location = new System.Drawing.Point(508, 55);
             this.btnagrega.Name = "btnagrega";
             this.btnagrega.Size = new System.Drawing.Size(75, 23);
-            this.btnagrega.TabIndex = 64;
+            this.btnagrega.TabIndex = 25;
             this.btnagrega.Text = "Agregar";
             this.btnagrega.UseVisualStyleBackColor = true;
             this.btnagrega.Click += new System.EventHandler(this.btnagrega_Click);
@@ -484,7 +641,7 @@
             this.txtNombre.Location = new System.Drawing.Point(30, 56);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(174, 20);
-            this.txtNombre.TabIndex = 64;
+            this.txtNombre.TabIndex = 22;
             // 
             // brigadagrid
             // 
@@ -562,7 +719,7 @@
             this.poblacionflotante.Location = new System.Drawing.Point(622, 189);
             this.poblacionflotante.Name = "poblacionflotante";
             this.poblacionflotante.Size = new System.Drawing.Size(260, 20);
-            this.poblacionflotante.TabIndex = 11;
+            this.poblacionflotante.TabIndex = 18;
             // 
             // poblacionfija
             // 
@@ -571,7 +728,7 @@
             this.poblacionfija.Location = new System.Drawing.Point(622, 134);
             this.poblacionfija.Name = "poblacionfija";
             this.poblacionfija.Size = new System.Drawing.Size(260, 20);
-            this.poblacionfija.TabIndex = 10;
+            this.poblacionfija.TabIndex = 17;
             this.poblacionfija.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // Superficie
@@ -581,7 +738,7 @@
             this.Superficie.Location = new System.Drawing.Point(622, 241);
             this.Superficie.Name = "Superficie";
             this.Superficie.Size = new System.Drawing.Size(260, 20);
-            this.Superficie.TabIndex = 12;
+            this.Superficie.TabIndex = 19;
             // 
             // municipio
             // 
@@ -641,7 +798,7 @@
             this.razoncomercial.Location = new System.Drawing.Point(323, 24);
             this.razoncomercial.Name = "razoncomercial";
             this.razoncomercial.Size = new System.Drawing.Size(260, 20);
-            this.razoncomercial.TabIndex = 2;
+            this.razoncomercial.TabIndex = 8;
             // 
             // telefono
             // 
@@ -650,7 +807,7 @@
             this.telefono.Location = new System.Drawing.Point(323, 189);
             this.telefono.Name = "telefono";
             this.telefono.Size = new System.Drawing.Size(260, 20);
-            this.telefono.TabIndex = 4;
+            this.telefono.TabIndex = 11;
             // 
             // domicilio
             // 
@@ -668,7 +825,7 @@
             this.txtrfc.Location = new System.Drawing.Point(320, 350);
             this.txtrfc.Name = "txtrfc";
             this.txtrfc.Size = new System.Drawing.Size(260, 20);
-            this.txtrfc.TabIndex = 8;
+            this.txtrfc.TabIndex = 14;
             // 
             // label7
             // 
@@ -685,7 +842,7 @@
             this.btnlogo.Location = new System.Drawing.Point(918, 258);
             this.btnlogo.Name = "btnlogo";
             this.btnlogo.Size = new System.Drawing.Size(260, 23);
-            this.btnlogo.TabIndex = 9;
+            this.btnlogo.TabIndex = 31;
             this.btnlogo.Text = "Seleccionar Logo";
             this.btnlogo.UseVisualStyleBackColor = true;
             this.btnlogo.Click += new System.EventHandler(this.btnlogo_Click_1);
@@ -697,7 +854,7 @@
             this.actividadempresa.Location = new System.Drawing.Point(323, 134);
             this.actividadempresa.Name = "actividadempresa";
             this.actividadempresa.Size = new System.Drawing.Size(260, 20);
-            this.actividadempresa.TabIndex = 2;
+            this.actividadempresa.TabIndex = 10;
             // 
             // representante
             // 
@@ -706,7 +863,7 @@
             this.representante.Location = new System.Drawing.Point(323, 242);
             this.representante.Name = "representante";
             this.representante.Size = new System.Drawing.Size(260, 20);
-            this.representante.TabIndex = 5;
+            this.representante.TabIndex = 12;
             // 
             // label8
             // 
@@ -725,7 +882,7 @@
             this.razonsocial.Location = new System.Drawing.Point(323, 79);
             this.razonsocial.Name = "razonsocial";
             this.razonsocial.Size = new System.Drawing.Size(260, 20);
-            this.razonsocial.TabIndex = 1;
+            this.razonsocial.TabIndex = 9;
             // 
             // label5
             // 
@@ -808,148 +965,31 @@
             this.label3.TabIndex = 40;
             this.label3.Text = "Domicilio";
             // 
-            // txtHabitual
+            // btnguardar
             // 
-            this.txtHabitual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtHabitual.ForeColor = System.Drawing.Color.Black;
-            this.txtHabitual.Location = new System.Drawing.Point(622, 79);
-            this.txtHabitual.Name = "txtHabitual";
-            this.txtHabitual.Size = new System.Drawing.Size(260, 20);
-            this.txtHabitual.TabIndex = 80;
+            this.btnguardar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnguardar.FlatAppearance.BorderSize = 0;
+            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnguardar.Location = new System.Drawing.Point(1060, 17);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(130, 40);
+            this.btnguardar.TabIndex = 30;
+            this.btnguardar.Text = "ACEPTAR";
+            this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click_1);
             // 
-            // label21
+            // btnregresar
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(622, 58);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(133, 17);
-            this.label21.TabIndex = 81;
-            this.label21.Text = "Población Habitual";
-            // 
-            // txtSuperficieConst
-            // 
-            this.txtSuperficieConst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtSuperficieConst.ForeColor = System.Drawing.Color.Black;
-            this.txtSuperficieConst.Location = new System.Drawing.Point(622, 296);
-            this.txtSuperficieConst.Name = "txtSuperficieConst";
-            this.txtSuperficieConst.Size = new System.Drawing.Size(260, 20);
-            this.txtSuperficieConst.TabIndex = 82;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(622, 275);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(179, 17);
-            this.label22.TabIndex = 83;
-            this.label22.Text = "Superficie Total Construida";
-            // 
-            // txtColinorte
-            // 
-            this.txtColinorte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtColinorte.ForeColor = System.Drawing.Color.Black;
-            this.txtColinorte.Location = new System.Drawing.Point(33, 190);
-            this.txtColinorte.Name = "txtColinorte";
-            this.txtColinorte.Size = new System.Drawing.Size(260, 20);
-            this.txtColinorte.TabIndex = 84;
-            // 
-            // Colinorte
-            // 
-            this.Colinorte.AutoSize = true;
-            this.Colinorte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Colinorte.Location = new System.Drawing.Point(33, 170);
-            this.Colinorte.Name = "Colinorte";
-            this.Colinorte.Size = new System.Drawing.Size(144, 17);
-            this.Colinorte.TabIndex = 85;
-            this.Colinorte.Text = "Colindancia al Norte";
-            // 
-            // txtColisur
-            // 
-            this.txtColisur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtColisur.ForeColor = System.Drawing.Color.Black;
-            this.txtColisur.Location = new System.Drawing.Point(33, 242);
-            this.txtColisur.Name = "txtColisur";
-            this.txtColisur.Size = new System.Drawing.Size(260, 20);
-            this.txtColisur.TabIndex = 86;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(33, 222);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(126, 17);
-            this.label24.TabIndex = 87;
-            this.label24.Text = "Colindancia al Sur";
-            // 
-            // txtColieste
-            // 
-            this.txtColieste.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtColieste.ForeColor = System.Drawing.Color.Black;
-            this.txtColieste.Location = new System.Drawing.Point(33, 297);
-            this.txtColieste.Name = "txtColieste";
-            this.txtColieste.Size = new System.Drawing.Size(260, 20);
-            this.txtColieste.TabIndex = 88;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(33, 277);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(133, 17);
-            this.label25.TabIndex = 89;
-            this.label25.Text = "Colindancia al Este";
-            // 
-            // txtColioeste
-            // 
-            this.txtColioeste.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtColioeste.ForeColor = System.Drawing.Color.Black;
-            this.txtColioeste.Location = new System.Drawing.Point(33, 350);
-            this.txtColioeste.Name = "txtColioeste";
-            this.txtColioeste.Size = new System.Drawing.Size(260, 20);
-            this.txtColioeste.TabIndex = 90;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(33, 332);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(145, 17);
-            this.label26.TabIndex = 91;
-            this.label26.Text = "Colindancia al Oeste";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(622, 4);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(139, 17);
-            this.label27.TabIndex = 93;
-            this.label27.Text = "No. de Trabajadores";
-            // 
-            // txtTrabajadores
-            // 
-            this.txtTrabajadores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtTrabajadores.ForeColor = System.Drawing.Color.Black;
-            this.txtTrabajadores.Location = new System.Drawing.Point(622, 24);
-            this.txtTrabajadores.Name = "txtTrabajadores";
-            this.txtTrabajadores.Size = new System.Drawing.Size(260, 20);
-            this.txtTrabajadores.TabIndex = 92;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(625, 387);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(128, 17);
-            this.label28.TabIndex = 71;
-            this.label28.Text = "Recursos Humanos";
+            this.btnregresar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnregresar.FlatAppearance.BorderSize = 0;
+            this.btnregresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnregresar.Location = new System.Drawing.Point(42, 17);
+            this.btnregresar.Name = "btnregresar";
+            this.btnregresar.Size = new System.Drawing.Size(130, 40);
+            this.btnregresar.TabIndex = 0;
+            this.btnregresar.Text = "REGRESAR";
+            this.btnregresar.UseVisualStyleBackColor = false;
+            this.btnregresar.Click += new System.EventHandler(this.btnregresar_Click_1);
             // 
             // panel3
             // 
@@ -961,46 +1001,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1227, 76);
             this.panel3.TabIndex = 34;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Área";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 157;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Puesto";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 150;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(622, 330);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(247, 17);
-            this.label23.TabIndex = 95;
-            this.label23.Text = "Personas con Condiciones Especiales";
-            // 
-            // txtDiscapacitados
-            // 
-            this.txtDiscapacitados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtDiscapacitados.ForeColor = System.Drawing.Color.Black;
-            this.txtDiscapacitados.Location = new System.Drawing.Point(622, 350);
-            this.txtDiscapacitados.Name = "txtDiscapacitados";
-            this.txtDiscapacitados.Size = new System.Drawing.Size(260, 20);
-            this.txtDiscapacitados.TabIndex = 94;
             // 
             // PipcCampeche
             // 

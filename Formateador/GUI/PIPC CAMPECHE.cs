@@ -50,6 +50,31 @@ namespace Formateador
                 MessageBox.Show("Ingrese valor en Ciudad");
                 return false;
             }
+            else if (string.IsNullOrEmpty(domicilio.Text))
+            {
+                MessageBox.Show("Ingrese valor en Domicilio");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txtColinorte.Text))
+            {
+                MessageBox.Show("Ingrese valor en Colindancia Norte");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txtColisur.Text))
+            {
+                MessageBox.Show("Ingrese valor en Colindancia Sur");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txtColieste.Text))
+            {
+                MessageBox.Show("Ingrese valor en Colindancia Este");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txtColioeste.Text))
+            {
+                MessageBox.Show("Ingrese valor en Colindancia Oeste");
+                return false;
+            }
             else if (string.IsNullOrEmpty(razoncomercial.Text))
             {
                 MessageBox.Show("Ingrese valor en Razón Comercial");
@@ -65,11 +90,6 @@ namespace Formateador
                 MessageBox.Show("Ingrese valor en Actividad de la Empresa");
                 return false;
             }
-            else if (string.IsNullOrEmpty(domicilio.Text))
-            {
-                MessageBox.Show("Ingrese valor en Domicilio");
-                return false;
-            }
             else if (string.IsNullOrEmpty(telefono.Text))
             {
                 MessageBox.Show("Ingrese valor en Teléfono");
@@ -80,9 +100,24 @@ namespace Formateador
                 MessageBox.Show("Ingrese valor en Representante Legal");
                 return false;
             }
+            else if (string.IsNullOrEmpty(responsableoperativo.Text))
+            {
+                MessageBox.Show("Ingrese valor en Responsable Operativo del Programa");
+                return false;
+            }
             else if (string.IsNullOrEmpty(rfc.Text))
             {
                 MessageBox.Show("Ingrese valor en RFC");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txtTrabajadores.Text))
+            {
+                MessageBox.Show("Ingrese valor en No. de Trabajadores");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txtHabitual.Text))
+            {
+                MessageBox.Show("Ingrese valor en Población Habitual");
                 return false;
             }
             else if (string.IsNullOrEmpty(poblacionfija.Text))
@@ -100,9 +135,24 @@ namespace Formateador
                 MessageBox.Show("Ingrese valor en Supercie Total del Terreno");
                 return false;
             }
-            else if (string.IsNullOrEmpty(responsableoperativo.Text))
+            else if (string.IsNullOrEmpty(txtSuperficieConst.Text))
             {
-                MessageBox.Show("Ingrese valor en Responsable Operativo del Programa");
+                MessageBox.Show("Ingrese valor en Supercie Total del Construida");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(txtDiscapacitados.Text))
+            {
+                MessageBox.Show("Ingrese valor en Personas con Condiciones Especiales");
+                return false;
+            }
+            else if (brigadagrid.Rows.Count == 0)
+            {
+                MessageBox.Show("Rellene la tabla Unidad Interna de Protección Civil");
+                return false;
+            }
+            else if (recursosHumanos.Rows.Count == 0)
+            {
+                MessageBox.Show("Rellene la tabla Recursos Humanos");
                 return false;
             }
             else
@@ -195,7 +245,7 @@ namespace Formateador
             Operaciones.ResponsableOperativo(ObjWord, ObjPlanes, responsableoperativo.Text);
             Operaciones.Cuerpo(ObjWord, ObjDoc, brigadagrid);
             Operaciones.Colindancias(ObjWord, ObjDoc, txtColinorte.Text, txtColisur.Text, txtColieste.Text, txtColioeste.Text);
-            Operaciones.LogoEncabezado(ObjWord, ObjDoc, picturelogo.ImageLocation);
+            //Operaciones.LogoEncabezado(ObjWord, ObjDoc, picturelogo.ImageLocation);
             Operaciones.RecusosHumanos(ObjWord, ObjDoc, recursosHumanos);
             Operaciones.Tablas(ObjWord, ObjDoc, brigadagrid);
             ObjWord.Visible = true;
@@ -316,7 +366,7 @@ namespace Formateador
             resultado = confirm.ShowDialog();
             if (resultado == DialogResult.OK)
             {
-                recursosHumanos.Rows.Remove(brigadagrid.CurrentRow);
+                recursosHumanos.Rows.Remove(recursosHumanos.CurrentRow);
             }
         }
     }
