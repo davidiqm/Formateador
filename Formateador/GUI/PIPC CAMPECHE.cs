@@ -37,17 +37,6 @@ namespace Formateador
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwd, int wmsg, int wparam, int lparam);
 
-        //Verfica que los campos estén completos para retroceder a la pantalla principal
-        private bool Verifica2()
-        {
-            return !string.IsNullOrEmpty(razoncomercial.Text) || !string.IsNullOrEmpty(razonsocial.Text) || 
-                !string.IsNullOrEmpty(actividadempresa.Text) || !string.IsNullOrEmpty(domicilio.Text) || 
-                !string.IsNullOrEmpty(telefono.Text) || !string.IsNullOrEmpty(representante.Text) || 
-                !string.IsNullOrEmpty(rfc.Text) || !string.IsNullOrEmpty(poblacionfija.Text) || 
-                !string.IsNullOrEmpty(poblacionflotante.Text) || !string.IsNullOrEmpty(Superficie.Text) || 
-                !string.IsNullOrEmpty(responsableoperativo.Text);
-        }
-
         //Verifica que los campos estén llenos para formatear el documento
         private bool Verifica()
         {
@@ -56,7 +45,11 @@ namespace Formateador
                 MessageBox.Show("Seleccione Municipio");
                 return false;
             }
-
+            else if (string.IsNullOrEmpty(txtCiudad.Text))
+            {
+                MessageBox.Show("Ingrese valor en Ciudad");
+                return false;
+            }
             else if (string.IsNullOrEmpty(razoncomercial.Text))
             {
                 MessageBox.Show("Ingrese valor en Razón Comercial");
@@ -141,41 +134,35 @@ namespace Formateador
 
                     SaveFileDialog sfdplanes = new SaveFileDialog();
                     sfdplanes.OverwritePrompt = true;
-                    sfdplanes.FileName = "PlANES " + razoncomercial.Text;
-                    sfdpipc.Filter = "Archivos Word (*.docx)|*.docx";
-                    sfdpipc.Title = "Guardar PLANES";
+                    sfdplanes.FileName = "PLANES " + razoncomercial.Text;
+                    sfdplanes.Filter = "Archivos Word (*.docx)|*.docx";
+                    sfdplanes.Title = "Guardar PLANES";
 
                     if (sfdplanes.ShowDialog() == DialogResult.OK)
                     {
+                        sfdplanes.Dispose();
                         Word(sfdpipc.FileName, sfdplanes.FileName);
+                        MessageBox.Show("Finalizado");
                     }
 
                 }
             }
-            MessageBox.Show("Finalizado");
         }
 
         //Regresa a la ventana principal
         private void btnregresar_Click_1(object sender, EventArgs e)
         {
-            if (Verifica2() == false)
+            
+            DialogResult resultado = new DialogResult();
+            Form confirm = new GUI.Confirmar("¿Desea regresar al menú de inicio?");
+            resultado = confirm.ShowDialog();
+            if (resultado == DialogResult.OK)
             {
                 this.Hide();
-                Inicio principal = new Inicio();
-                principal.Show();
+                Inicio inicio = new Inicio();
+                inicio.Show();
             }
-            else
-            {
-                DialogResult resultado = new DialogResult();
-                Form confirm = new GUI.Confirmar("¿Desea regresar al menú de inicio?");
-                resultado = confirm.ShowDialog();
-                if (resultado == DialogResult.OK)
-                {
-                    this.Hide();
-                    Inicio inicio = new Inicio();
-                    inicio.Show();
-                }
-            }
+
         }
 
         //Realiza el proceso de sustitución de valores
@@ -190,21 +177,28 @@ namespace Formateador
             ObjWord = new Word.Application();
             ObjDoc = ObjWord.Documents.Open(rutapipc, ObjMiss);
             ObjPlanes = ObjWord.Documents.Open(rutaplanes, ObjMiss);
+            //ObjDoc = ObjWord.Documents.Open(ruta, ObjMiss);
 
-            Operaciones.Reglamento(ObjWord, ObjDoc, municipio.Text);
-            Operaciones.RazonComercial(ObjWord, ObjDoc, razoncomercial.Text);
-            Operaciones.RazonSocial(ObjWord, ObjDoc, razonsocial.Text);
-            Operaciones.ActividadEmpresa(ObjWord, ObjDoc, actividadempresa.Text);
-            Operaciones.Domicilio(ObjWord, ObjDoc, domicilio.Text);
-            Operaciones.Telefono(ObjWord, ObjDoc, telefono.Text);
-            Operaciones.Representante(ObjWord, ObjDoc, representante.Text);
-            Operaciones.RFC(ObjWord, ObjDoc, rfc.Text);
+            Operaciones.Reglamento(ObjWord, ObjDoc, ObjPlanes, municipio.Text);
+            Operaciones.Ciudad(ObjWord, ObjDoc, ObjPlanes, txtCiudad.Text);
+            Operaciones.RazonComercial(ObjWord, ObjDoc, ObjPlanes, razoncomercial.Text);
+            Operaciones.RazonSocial(ObjWord, ObjDoc, ObjPlanes, razonsocial.Text);
+            Operaciones.ActividadEmpresa(ObjWord, ObjDoc, ObjPlanes, actividadempresa.Text);
+            Operaciones.Domicilio(ObjWord, ObjDoc, ObjPlanes, domicilio.Text);
+            Operaciones.Telefono(ObjWord, ObjDoc, ObjPlanes, telefono.Text);
+            Operaciones.Representante(ObjWord, ObjDoc, ObjPlanes, representante.Text);
+            Operaciones.RFC(ObjWord, ObjDoc, ObjPlanes, txtrfc.Text);
+            Operaciones.PoblacionHabitualyTrabajadores(ObjWord, ObjDoc, txtHabitual.Text, txtTrabajadores.Text, txtDiscapacitados.Text);
             Operaciones.PoblacionFija(ObjWord, ObjDoc, poblacionfija.Text);
             Operaciones.PoblacionFlotante(ObjWord, ObjDoc, poblacionflotante.Text);
-            Operaciones.SuperficieTerreno(ObjWord, ObjDoc, Superficie.Text);
-            //Operaciones.ResponsableOperativo(ObjWord, ObjDoc, responsableoperativo.Text);
-            //Operaciones.Tabla(ObjWord, ObjDoc, representante.Text);
-            //ObjWord.Visible = true;
+            Operaciones.SuperficieTerreno(ObjWord, ObjDoc, Superficie.Text, txtSuperficieConst.Text);
+            Operaciones.ResponsableOperativo(ObjWord, ObjPlanes, responsableoperativo.Text);
+            Operaciones.Cuerpo(ObjWord, ObjDoc, brigadagrid);
+            Operaciones.Colindancias(ObjWord, ObjDoc, txtColinorte.Text, txtColisur.Text, txtColieste.Text, txtColioeste.Text);
+            Operaciones.LogoEncabezado(ObjWord, ObjDoc, picturelogo.ImageLocation);
+            Operaciones.RecusosHumanos(ObjWord, ObjDoc, recursosHumanos);
+            Operaciones.Tablas(ObjWord, ObjDoc, brigadagrid);
+            ObjWord.Visible = true;
         }
 
         //Ventana de aviso para cerrar el programa
@@ -285,5 +279,45 @@ namespace Formateador
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = new DialogResult();
+            Form confirm = new GUI.Confirmar("¿Desea borrar el elemento?");
+            resultado = confirm.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                brigadagrid.Rows.Remove(brigadagrid.CurrentRow);
+            }
+        }
+
+        private void btnRecursos_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNombreRH.Text) || string.IsNullOrEmpty(txtArea.Text) || string.IsNullOrEmpty(txtPuesto.Text))
+            {
+                MessageBox.Show("Rellene los campos faltantes");
+            }
+            else
+            {
+                recursosHumanos.Rows.Add();
+                int numfilas = recursosHumanos.Rows.Count - 1;
+                recursosHumanos[0, numfilas].Value = txtNombreRH.Text;
+                recursosHumanos[1, numfilas].Value = txtArea.Text;
+                recursosHumanos[2, numfilas].Value = txtPuesto.Text;
+                txtNombreRH.Text = "";
+                txtArea.Text = "";
+                txtPuesto.Text = "";
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            DialogResult resultado = new DialogResult();
+            Form confirm = new GUI.Confirmar("¿Desea borrar el elemento?");
+            resultado = confirm.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                recursosHumanos.Rows.Remove(brigadagrid.CurrentRow);
+            }
+        }
     }
 }

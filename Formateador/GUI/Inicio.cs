@@ -36,7 +36,16 @@ namespace Formateador
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwd, int wmsg, int wparam, int lparam);
 
-        private void btncerrar_Click(object sender, EventArgs e) => Application.Exit();
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = new DialogResult();
+            Form confirm = new GUI.Confirmar("¿Desea salir del programa?");
+            resultado = confirm.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
 
         private void btnminimizar_Click(object sender, EventArgs e)
         {
